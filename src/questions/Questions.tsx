@@ -4,11 +4,13 @@ import { List, ListItem, Paper, Box, Fade } from '@material-ui/core'
 import { History } from 'history'
 import { useHistory } from 'react-router-dom'
 
+import CustomIcon from '../customIcon'
+
 const questions = [
-  'walk my pangolin',
-  'acquire toilet paper',
-  ' go to the bar',
-  'come from the bar',
+  ['walk my pangolin', 'pangolin.svg'],
+  ['acquire toilet paper', 'toilet-paper.png'],
+  [' go to the bar'],
+  ['come from the bar'],
 ]
 
 const answerQuestion = (history: History) => history.push('/answer')
@@ -20,9 +22,10 @@ export default () => {
       <Fade in={true}>
         <Paper>
           <List>
-            {questions.map((q) => (
+            {questions.map(([q, image]) => (
               <ListItem button key={q} onClick={() => answerQuestion(history)}>
-                {q}
+                {image && <CustomIcon source={image} />}
+                <span>{q}</span>
               </ListItem>
             ))}
           </List>

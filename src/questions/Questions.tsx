@@ -1,5 +1,5 @@
 import React from 'react'
-import { List, ListItem, Paper, Box } from '@material-ui/core'
+import { List, ListItem, Paper, Box, Fade } from '@material-ui/core'
 
 import { History } from 'history'
 import { useHistory } from 'react-router-dom'
@@ -17,15 +17,17 @@ export default () => {
   const history = useHistory()
   return (
     <Box m={12}>
-      <Paper>
-        <List>
-          {questions.map((q) => (
-            <ListItem button key={q} onClick={() => answerQuestion(history)}>
-              {q}
-            </ListItem>
-          ))}
-        </List>
-      </Paper>
+      <Fade in={true}>
+        <Paper>
+          <List>
+            {questions.map((q) => (
+              <ListItem button key={q} onClick={() => answerQuestion(history)}>
+                {q}
+              </ListItem>
+            ))}
+          </List>
+        </Paper>
+      </Fade>
     </Box>
   )
 }

@@ -1,7 +1,18 @@
-import React from "react";
-import "./App.css";
+import React from 'react'
+import './App.css'
 
-import { CssBaseline, Container, Box, Typography } from "@material-ui/core";
+import { Route, Switch } from 'react-router-dom'
+import { CssBaseline, Container, Box, Typography } from '@material-ui/core'
+
+import Questions from './questions'
+import Answer from './answer'
+
+const EntryPoint = () => (
+  <>
+    <Typography variant="h2">Can I ... ?</Typography>
+    <Questions />
+  </>
+)
 
 const App = () => (
   <div data-testid="app">
@@ -9,10 +20,13 @@ const App = () => (
 
     <Box mt={12}>
       <Container component="main">
-        <Typography variant="h2">Can I ... ?</Typography>
+        <Switch>
+          <Route exact path="/answer" component={Answer} />
+          <Route path="/" component={EntryPoint} />
+        </Switch>
       </Container>
     </Box>
   </div>
-);
+)
 
-export default App;
+export default App

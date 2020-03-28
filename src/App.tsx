@@ -9,7 +9,9 @@ import Answer from './answer'
 
 const EntryPoint = () => (
   <>
-    <Typography variant="h2">Can I ... ?</Typography>
+    <Typography variant="h2" align="center">
+      Can I ... ?
+    </Typography>
     <Questions />
   </>
 )

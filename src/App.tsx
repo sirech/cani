@@ -2,17 +2,16 @@ import React from 'react'
 import './App.css'
 
 import { Route, Switch } from 'react-router-dom'
-import { CssBaseline, Container, Box, Typography } from '@material-ui/core'
+import { CssBaseline, Container, Box } from '@material-ui/core'
 
 import Questions from 'questions'
 import Answer from 'answer'
 import About from 'about'
+import Header from 'header'
 
 const EntryPoint = () => (
   <>
-    <Typography variant="h2" align="center">
-      Can I ... ?
-    </Typography>
+    <Header />
     <Questions />
   </>
 )

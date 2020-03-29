@@ -19,6 +19,7 @@ import OutdoorGrillIcon from '@material-ui/icons/OutdoorGrill'
 import LocalBarIcon from '@material-ui/icons/LocalBar'
 import MuseumIcon from '@material-ui/icons/Museum'
 import SportsHandballIcon from '@material-ui/icons/SportsHandball'
+import EmojiFoodBeverageIcon from '@material-ui/icons/EmojiFoodBeverage'
 
 import CustomIcon from '../customIcon'
 
@@ -38,6 +39,7 @@ const questions: Array<[string, Image, string?]> = [
     'Every bar is closed, where are you even coming from?',
   ],
   ['grill outside', <OutdoorGrillIcon />],
+  ['eat bat soup', <EmojiFoodBeverageIcon />],
   ['take the subway', <DirectionsSubwayIcon />],
   ['catch a plane', <AirplanemodeActiveIcon />],
   ['go to work', <BusinessCenterIcon />],

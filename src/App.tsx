@@ -4,8 +4,8 @@ import './App.css'
 import { Route, Switch } from 'react-router-dom'
 import { CssBaseline, Container, Box, Typography } from '@material-ui/core'
 
-import Questions from './questions'
-import Answer from './answer'
+import Questions from 'questions'
+import Answer from 'answer'
 
 const EntryPoint = () => (
   <>

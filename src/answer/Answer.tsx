@@ -1,26 +1,11 @@
 import React from 'react'
 
-import { Button, Typography, CircularProgress } from '@material-ui/core'
+import { Button, Typography } from '@material-ui/core'
 import { useHistory } from 'react-router-dom'
-import { useTimeout } from 'react-use'
+
+import WithDelay from 'withDelay'
 
 import footer from './Footer.module.css'
-import container from './Container.module.css'
-
-const WithDelay = ({ render }: { render: () => JSX.Element }) => {
-  const [isReady] = useTimeout(2000)
-  return (
-    <>
-      {isReady() ? (
-        render()
-      ) : (
-        <div className={container.container}>
-          <CircularProgress />
-        </div>
-      )}
-    </>
-  )
-}
 
 const Answer = () => {
   const history = useHistory()

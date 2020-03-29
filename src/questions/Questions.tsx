@@ -49,7 +49,7 @@ const renderImage = (image: Image) => {
 export default () => {
   const history = useHistory()
   return (
-    <Box m={12}>
+    <Box mx={6} mb={12}>
       <Fade timeout={1000} in={true}>
         <Paper>
           <List>

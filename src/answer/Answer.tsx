@@ -1,21 +1,28 @@
 import React from 'react'
 
 import { Button, Fade, Typography } from '@material-ui/core'
-import { useHistory } from 'react-router-dom'
+import { useHistory, useLocation } from 'react-router-dom'
 
 import WithDelay from 'withDelay'
 
 import footer from './Footer.module.css'
 
+const showAnswer = (answer: string | undefined) => {
+  return answer ? answer : 'No'
+}
+
 const Answer = () => {
   const history = useHistory()
+  const {
+    state: { answer },
+  } = useLocation()
 
   return (
     <>
       <Fade timeout={1000} in={true}>
         <section>
           <Typography variant="h2" className="center" align="center">
-            No
+            {showAnswer(answer)}
           </Typography>
         </section>
       </Fade>

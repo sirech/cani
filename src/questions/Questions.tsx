@@ -24,11 +24,19 @@ import CustomIcon from '../customIcon'
 
 type Image = string | JSX.Element
 
-const questions: Array<[string, Image]> = [
-  ['walk my pangolin', 'pangolin.svg'],
-  ['acquire toilet paper', 'toilet-paper.png'],
-  [' go to the bar', <LocalBarIcon />],
-  ['come from the bar', <SportsHandballIcon />],
+const questions: Array<[string, Image, string?]> = [
+  ['walk my pangolin', 'pangolin.svg', 'Fuck your pangolin'],
+  [
+    'acquire toilet paper',
+    'toilet-paper.png',
+    'Remember, one package per person',
+  ],
+  ['go to the bar', <LocalBarIcon />],
+  [
+    'come from the bar',
+    <SportsHandballIcon />,
+    'Every bar is closed, where are you even coming from?',
+  ],
   ['grill outside', <OutdoorGrillIcon />],
   ['take the subway', <DirectionsSubwayIcon />],
   ['catch a plane', <AirplanemodeActiveIcon />],
@@ -36,7 +44,8 @@ const questions: Array<[string, Image]> = [
   ['go to the museum', <MuseumIcon />],
 ]
 
-const answerQuestion = (history: History) => history.push('/answer')
+const answerQuestion = (history: History, answer: string | undefined) =>
+  history.push('/answer', { answer: answer || '' })
 
 const renderImage = (image: Image) => {
   if (!image) return ''
@@ -53,8 +62,12 @@ export default () => {
       <Fade timeout={1000} in={true}>
         <Paper>
           <List>
-            {questions.map(([q, image]) => (
-              <ListItem button key={q} onClick={() => answerQuestion(history)}>
+            {questions.map(([q, image, answer]) => (
+              <ListItem
+                button
+                key={q}
+                onClick={() => answerQuestion(history, answer)}
+              >
                 {renderImage(image)}
                 <ListItemText primary={q} />
               </ListItem>

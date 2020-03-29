@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Typography, Divider } from '@material-ui/core'
+import { Typography } from '@material-ui/core'
 import Header from 'header'
 
 const About = () => (

@@ -8,11 +8,13 @@ import Questions from 'questions'
 import Answer from 'answer'
 import About from 'about'
 import Header from 'header'
+import Footer from 'footer'
 
 const EntryPoint = () => (
   <>
     <Header />
     <Questions />
+    <Footer />
   </>
 )
 

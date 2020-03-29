@@ -6,6 +6,7 @@ import { CssBaseline, Container, Box, Typography } from '@material-ui/core'
 
 import Questions from 'questions'
 import Answer from 'answer'
+import About from 'about'
 
 const EntryPoint = () => (
   <>
@@ -23,6 +24,7 @@ const App = () => (
     <Box mt={12}>
       <Container component="main">
         <Switch>
+          <Route exact path="/about" component={About} />
           <Route exact path="/answer" component={Answer} />
           <Route path="/" component={EntryPoint} />
         </Switch>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Button, Typography } from '@material-ui/core'
+import { Button, Fade, Typography } from '@material-ui/core'
 import { useHistory } from 'react-router-dom'
 
 import WithDelay from 'withDelay'
@@ -12,11 +12,13 @@ const Answer = () => {
 
   return (
     <>
-      <section>
-        <Typography variant="h2" className="center" align="center">
-          No
-        </Typography>
-      </section>
+      <Fade timeout={1000} in={true}>
+        <section>
+          <Typography variant="h2" className="center" align="center">
+            No
+          </Typography>
+        </section>
+      </Fade>
       <footer className={footer.footer}>
         <Button
           variant="contained"

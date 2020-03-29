@@ -19,7 +19,7 @@ export default () => {
   const history = useHistory()
   return (
     <Box m={12}>
-      <Fade in={true}>
+      <Fade timeout={1000} in={true}>
         <Paper>
           <List>
             {questions.map(([q, image]) => (
